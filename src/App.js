@@ -8,9 +8,12 @@ function App() {
       <header className="App-header">
       <img src={p1} alt="Alok Shreya Marriage" style={{ maxWidth: '50%' }} />
 
-        <p>
+        <h1>
           WELCOME TO ALOK - SHREYA MARRIAGE
-        </p>
+        </h1>
+        <h4>
+          Website work in progress
+        </h4>
       </header>
     </div>
   );
