@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/alok-shreya-marriage/static/css/main.f855e6bc.css",
-    "main.js": "/alok-shreya-marriage/static/js/main.775a80cb.js",
+    "main.js": "/alok-shreya-marriage/static/js/main.7f78813e.js",
     "static/js/453.885fc0af.chunk.js": "/alok-shreya-marriage/static/js/453.885fc0af.chunk.js",
     "static/media/p1.jpg": "/alok-shreya-marriage/static/media/p1.9b0c671e0531384294e8.jpg",
     "static/media/logo.svg": "/alok-shreya-marriage/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/alok-shreya-marriage/index.html",
     "main.f855e6bc.css.map": "/alok-shreya-marriage/static/css/main.f855e6bc.css.map",
-    "main.775a80cb.js.map": "/alok-shreya-marriage/static/js/main.775a80cb.js.map",
+    "main.7f78813e.js.map": "/alok-shreya-marriage/static/js/main.7f78813e.js.map",
     "453.885fc0af.chunk.js.map": "/alok-shreya-marriage/static/js/453.885fc0af.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.775a80cb.js"
+    "static/js/main.7f78813e.js"
   ]
 }
