@@ -12,7 +12,7 @@ function App() {
           WELCOME TO ALOK - SHREYA MARRIAGE
         </h1>
         <h4>
-          Website work in progress
+          Website work in progress, hello
         </h4>
       </header>
     </div>
