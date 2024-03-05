@@ -2,6 +2,25 @@
   text-align: center;
 }
 
+.App-header {
+  text-align: center;
+}
+
+.carousel-container {
+  margin: 20px auto;
+  max-width: 70%;
+}
+
+.carousel-item {
+  text-align: center;
+}
+
+.location-container {
+  margin: 20px auto;
+  text-align: center;
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
