@@ -1,0 +1,38 @@
+@use '@carbon/react';
+@use '@carbon/react/scss/spacing' as *;
+
+.main {
+  padding: 16px 16px 64px;
+  display: 'flex';
+  flex-direction: row;
+
+
+  .carousel-container {
+    width: 100%;
+    position: relative;
+    padding-top: 56.25%;
+    max-width: 850px;
+
+    > * {
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .tabs {
+    // width: 250px;
+  }
+
+  .location-container {
+    margin: 20px auto;
+    text-align: center;
+
+  }
+
+  // @media screen and (max-width: 850px) {
+  //   width: 100%;
+  // }
+}
