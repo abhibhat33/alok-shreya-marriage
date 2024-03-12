@@ -40,7 +40,7 @@ function App() {
               textAlign: "center"
               // Adjusted padding
             }}>
-            <h1>Welcome to Alok - Shreya Wedding Ceromany</h1>
+            <h1>Welcome to Alok - Shreya Wedding</h1>
             <p style={{ fontSize: 16 }}>by Bhat's Family</p>
           </div>
 
