@@ -80,7 +80,7 @@ function App() {
     
               <div className="events">
               
-              <p style={{ textAlign: 'center', fontFamily: 'monospace', fontWeight: "bold", fontSize: 25, paddingBottom: 16}}>Kindly participate & Bless US</p>
+              <p style={{ textAlign: 'center', fontFamily: 'fantasy', fontWeight: "bold", fontSize: 25, paddingBottom: 16}}>Kindly participate & Bless US</p>
                 <div className="event-container" style={{ backgroundColor: "violet", fontFamily: 'fantasy', fontSize: '22px', fontStyle: 'italic', fontWeight: 'bold' }}>
                   <h2 style={{ fontSize: '30px', fontWeight: 'bold' }}>Naandi</h2>
                   <p>Date: May 02, 2024</p>
