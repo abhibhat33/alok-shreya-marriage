@@ -18,7 +18,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { find, isNil, propEq } from 'ramda';
 
-import { isEmpty } from '~/lib';
+import { isEmpty } from './lib/isEmpty';
 
 class TabMenu extends PureComponent {
   constructor(props){
@@ -82,7 +82,7 @@ class TabMenu extends PureComponent {
     } = this.props;
     const { activeTab } = this.state;
 
-    if (isEmpty(tabs)) return null;
+    if (!(tabs)) return null;
 
     return (
       <>

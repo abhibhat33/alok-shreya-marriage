@@ -3,15 +3,14 @@
 
 .main {
   padding: 16px 16px 64px;
-  display: 'flex';
-  flex-direction: row;
-
+  display: flex;
+  flex-direction: column;
 
   .carousel-container {
     width: 100%;
     position: relative;
-    padding-top: 56.25%;
     max-width: 850px;
+    margin-bottom: 20px;
 
     > * {
       top: 0;
@@ -20,19 +19,85 @@
       width: 100%;
       height: 100%;
     }
+    
+    @media (max-width: 599px) {
+      padding-top: 25em; // Adjust the padding for small screens
+    }
   }
 
   .tabs {
-    // width: 250px;
+    width: 100%;
+    max-width: 850px;
+
+    .tab-header {
+      display: flex;
+      justify-content: space-around;
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-radius: 8px;
+      flex-wrap: wrap;
+
+      button {
+        margin-bottom: 10px;
+        padding: 10px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        font-size: 16px;
+        width: 50%;
+
+        &:not(.active) {
+          font-weight: bold; // Make inactive buttons bolder
+          color: #333; // Set the text color for inactive state
+          background-color: lightblue; // Set the background color for inactive state
+        }
+
+        &.active {
+          font-weight: normal; // Make the active button normal weight
+          color: lightblue; // Set the text color for the active state
+          background-color: #333; // Set the background color for the active state
+        }
+      }
+    }
+
+    .tab-content {
+      margin-top: 20px;
+
+      .location {
+        position: absolute; // Ensure relative positioning for child absolute positioning
+
+        img {
+          max-width: 100%;
+          height: auto; // Ensure the image height adjusts accordingly
+          border-radius: 8px;
+        }
+
+        .my-custom-class {
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+      }
+
+      .events {
+        h2 {
+          color: #333;
+        }
+      }
+    }
   }
 
-  .location-container {
-    margin: 20px auto;
-    text-align: center;
+  @media (min-width: 600px) {
+    flex-direction: row;
 
+    .tabs {
+      margin-top: 0;
+      width: 60%;
+      flex-wrap: nowrap; // Prevent tabs from wrapping on larger screens
+    }
+
+    .carousel-container {
+      width: 40%;
+    }
   }
-
-  // @media screen and (max-width: 850px) {
-  //   width: 100%;
-  // }
 }
