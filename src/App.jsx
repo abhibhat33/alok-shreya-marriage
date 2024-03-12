@@ -16,7 +16,7 @@ import { Header } from '@carbon/react';
 function App() {
   const [activeTab, setActiveTab] = useState(0); // To track the active tab
 
-  const images = [p1, p2, p3, p4, p5, p6];
+  const images = [ p2, p3, p4, p5, p6];
   const locationLink = 'https://goo.gl/maps/LiisgKv448xUEViu6';
 
   const handleTabChange = (tabIndex) => {
@@ -40,14 +40,14 @@ function App() {
               textAlign: "center"
               // Adjusted padding
             }}>
-            <h1>Welcome to Alok - Shreya Marriage</h1>
-            <p style={{ fontSize: 14 }}>by Bhat's Family</p>
+            <h1>Welcome to Alok - Shreya Wedding Ceromany</h1>
+            <p style={{ fontSize: 16 }}>by Bhat's Family</p>
           </div>
 
     </header>
-    <div className="main">
+    <div className="main" style={{ backgroundColor: 'lightgrey'}}>
         <div className="carousel-container">
-          <Carousel autoPlay={true} interval={2000} autoFocus infiniteLoop showIndicators stopOnHover>
+          <Carousel autoPlay={true} interval={6000} autoFocus infiniteLoop showIndicators stopOnHover>
             {images.map((image, index) => (
               <div key={index} className="carousel-item">
                 <img src={image} alt="alok and shreya" />
@@ -77,35 +77,36 @@ function App() {
             )}
 
             {activeTab === 1 && (
+    
               <div className="events">
               
-
-                <div className="event-container" style={{ backgroundColor: "violet", fontFamily: 'cursive', fontSize: '22px', fontStyle: 'italic', fontWeight: 'bold' }}>
-                  <h2 style={{ fontSize: '30px', fontWeight: 'bold' }}>NAANDI</h2>
+              <p style={{ textAlign: 'center', fontFamily: 'monospace', fontWeight: "bold", fontSize: 25, paddingBottom: 16}}>Kindly participate & Bless US</p>
+                <div className="event-container" style={{ backgroundColor: "violet", fontFamily: 'fantasy', fontSize: '22px', fontStyle: 'italic', fontWeight: 'bold' }}>
+                  <h2 style={{ fontSize: '30px', fontWeight: 'bold' }}>Naandi</h2>
                   <p>Date: May 02, 2024</p>
-                  <p>Time: morning</p>
-                  <p>Venue: Badadabailu </p>
+                  <p> Venue: Manjushree Badadabailu </p>
                 </div>
 
-                <div className="event-container" style={{ backgroundColor: "orange", fontFamily: 'cursive', fontSize: '22px', fontStyle: 'normal', fontWeight: 'normal' }}>
+                <div className="event-container" style={{ backgroundColor: "orange", fontFamily: 'fantasy', fontSize: '22px', fontStyle: 'normal', fontWeight: 'normal' }}>
                   <h2 style={{ fontSize: '30px', fontWeight: 'bold' }}>Wedding Ceremony</h2>
                   <p>Date: May 03, 2024</p>
-                  <p>Time: </p>
-                  <p>Venue: Badadabailu</p>
+                  <p>Time: Morning @8:30 </p>
+                  <p>Venue: Manjushree Badadabailu</p>
+                  <p>& Vadhu Prahvesha @11:30</p>
                 </div>
 
-                <div className="event-container" style={{ backgroundColor: "yellow", fontFamily: 'cursive', fontSize: '22px', fontStyle: 'normal', fontWeight: 'normal' }}>
-                  <h2 style={{ fontSize: '30px', fontWeight: 'bold' }}>Cultural Events</h2>
-                  <p>Date: May 03, 2024</p>
-                  <p>Time: </p>
-                  <p>Venue: Badadabailu </p>
-                </div>
-
-                <div className="event-container" style={{ backgroundColor: "green", fontFamily: 'cursive', fontSize: '22px', fontStyle: 'normal', fontWeight: 'normal' }}>
+                <div className="event-container" style={{ backgroundColor: "yellow", fontFamily: 'fantasy', fontSize: '22px', fontStyle: 'normal', fontWeight: 'normal' }}>
                   <h2 style={{ fontSize: '30px', fontWeight: 'bold' }}>Reception</h2>
+                  <p>Date: May 03, 2024</p>
+                  <p>Time: Evening @5:30 </p>
+                  <p>Venue: Manjushree Badadabailu </p>
+                  <p>& Cultural Events By Family</p>
+                </div>
+
+                <div className="event-container" style={{ backgroundColor: "green", fontFamily: 'fantasy', fontSize: '22px', fontStyle: 'normal', fontWeight: 'normal' }}>
+                  <h2 style={{ fontSize: '30px', fontWeight: 'bold' }}>Satya Narayana Pooje</h2>
                   <p>Date: March 04, 2024</p>
-                  <p>Time: </p>
-                  <p>Venue: Badadabailu</p>
+                  <p>Venue: Manjushree Badadabailu</p>
                 </div>
 
               </div>
