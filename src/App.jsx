@@ -2,14 +2,21 @@ import React, { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Import the carousel styles
 import './App.scss';
-import p1 from './p1.jpg';
+import p1 from './p1.jpeg';
+import p2 from './p2.jpeg';
+import p3 from './p3.jpeg';
+import p4 from './p4.jpeg';
+import p5 from './p5.jpeg';
+import p6 from './p6.jpeg';
 import location from './location.png';
+import background from './background.jpg';
 import { LocationCurrent } from '@carbon/icons-react';
+import { Header } from '@carbon/react';
 
 function App() {
   const [activeTab, setActiveTab] = useState(0); // To track the active tab
 
-  const images = [p1, p1, p1, p1, p1, p1];
+  const images = [p1, p2, p3, p4, p5, p6];
   const locationLink = 'https://goo.gl/maps/LiisgKv448xUEViu6';
 
   const handleTabChange = (tabIndex) => {
@@ -17,45 +24,98 @@ function App() {
   };
 
   return (
+    <>
+              <header className="App-header">
+              <div className="main" style={{
+              backgroundColor: "lightblue",
+              display: "flex",
+              flexDirection: "column", 
+              flexWrap: "wrap",
+              alignItems: "center",
+              justifyContent: "center",
+              fontFamily: "cursive",
+              fontSize: 20,
+              fontWeight: "bold",
+              paddingBottom: 0,
+              textAlign: "center"
+              // Adjusted padding
+            }}>
+            <h1>Welcome to Alok - Shreya Marriage</h1>
+            <p style={{ fontSize: 14 }}>by Bhat's Family</p>
+          </div>
+
+    </header>
     <div className="main">
-      <div className="carousel-container">
-        <Carousel autoPlay={true} interval={2000} autoFocus infiniteLoop showIndicators stopOnHover>
-          {images.map((image, index) => (
-            <div key={index} className="carousel-item">
+        <div className="carousel-container">
+          <Carousel autoPlay={true} interval={2000} autoFocus infiniteLoop showIndicators stopOnHover>
+            {images.map((image, index) => (
+              <div key={index} className="carousel-item">
                 <img src={image} alt="alok and shreya" />
-            </div>
-          ))}
-        </Carousel>
-      </div>
-
-      <div className="tabs">
-        <div className="tab-header">
-          <button onClick={() => handleTabChange(0)} className={activeTab === 0 ? 'active' : ''}>
-            Location
-          </button>
-          <button onClick={() => handleTabChange(1)} className={activeTab === 1 ? 'active' : ''}>
-            Events
-          </button>
+              </div>
+            ))}
+          </Carousel>
         </div>
 
-        <div className="tab-content">
-          {activeTab === 0 && (
-            <div className="location">
-              <a href={locationLink} target="_blank" rel="noopener noreferrer">
-              <LocationCurrent size={64} aria-label="Add" className="my-custom-class" />
-                <img src={location} alt="Location" />
-              </a>
-            </div>
-          )}
+        <div className="tabs">
+          <div className="tab-header">
+            <button onClick={() => handleTabChange(0)} className={activeTab === 0 ? 'active' : ''}>
+              Location
+            </button>
+            <button onClick={() => handleTabChange(1)} className={activeTab === 1 ? 'active' : ''}>
+              Events
+            </button>
+          </div>
 
-          {activeTab === 1 && (
-            <div className="events">
-              <h2>Add Events</h2>
-            </div>
-          )}
+          <div className="tab-content">
+            {activeTab === 0 && (
+              <div className="location">
+                <a href={locationLink} target="_blank" rel="noopener noreferrer">
+                  <LocationCurrent size={64} aria-label="Add" className="my-custom-class" />
+                  <img src={location} alt="Location" />
+                </a>
+              </div>
+            )}
+
+            {activeTab === 1 && (
+              <div className="events">
+              
+
+                <div className="event-container" style={{ backgroundColor: "violet", fontFamily: 'cursive', fontSize: '22px', fontStyle: 'italic', fontWeight: 'bold' }}>
+                  <h2 style={{ fontSize: '30px', fontWeight: 'bold' }}>NAANDI</h2>
+                  <p>Date: May 02, 2024</p>
+                  <p>Time: morning</p>
+                  <p>Venue: Badadabailu </p>
+                </div>
+
+                <div className="event-container" style={{ backgroundColor: "orange", fontFamily: 'cursive', fontSize: '22px', fontStyle: 'normal', fontWeight: 'normal' }}>
+                  <h2 style={{ fontSize: '30px', fontWeight: 'bold' }}>Wedding Ceremony</h2>
+                  <p>Date: May 03, 2024</p>
+                  <p>Time: </p>
+                  <p>Venue: Badadabailu</p>
+                </div>
+
+                <div className="event-container" style={{ backgroundColor: "yellow", fontFamily: 'cursive', fontSize: '22px', fontStyle: 'normal', fontWeight: 'normal' }}>
+                  <h2 style={{ fontSize: '30px', fontWeight: 'bold' }}>Cultural Events</h2>
+                  <p>Date: May 03, 2024</p>
+                  <p>Time: </p>
+                  <p>Venue: Badadabailu </p>
+                </div>
+
+                <div className="event-container" style={{ backgroundColor: "green", fontFamily: 'cursive', fontSize: '22px', fontStyle: 'normal', fontWeight: 'normal' }}>
+                  <h2 style={{ fontSize: '30px', fontWeight: 'bold' }}>Reception</h2>
+                  <p>Date: March 04, 2024</p>
+                  <p>Time: </p>
+                  <p>Venue: Badadabailu</p>
+                </div>
+
+              </div>
+            )}
+
+
+
+          </div>
         </div>
-      </div>
-    </div>
+      </div></>
   );
 }
 

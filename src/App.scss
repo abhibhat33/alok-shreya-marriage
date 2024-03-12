@@ -1,7 +1,10 @@
 @use '@carbon/react';
 @use '@carbon/react/scss/spacing' as *;
 
+
+
 .main {
+  // background-color: #60c8ee;
   padding: 16px 16px 64px;
   display: flex;
   flex-direction: column;
@@ -21,7 +24,7 @@
     }
     
     @media (max-width: 599px) {
-      padding-top: 25em; // Adjust the padding for small screens
+      padding-top: 25em;
     }
   }
 
@@ -35,7 +38,6 @@
       background-color: #f0f0f0;
       padding: 10px;
       border-radius: 8px;
-      flex-wrap: wrap;
 
       button {
         margin-bottom: 10px;
@@ -47,15 +49,15 @@
         width: 50%;
 
         &:not(.active) {
-          font-weight: bold; // Make inactive buttons bolder
-          color: #333; // Set the text color for inactive state
-          background-color: lightblue; // Set the background color for inactive state
+          font-weight: bold;
+          color: #333;
+          background-color: lightblue;
         }
 
         &.active {
-          font-weight: normal; // Make the active button normal weight
-          color: lightblue; // Set the text color for the active state
-          background-color: #333; // Set the background color for the active state
+          font-weight: normal;
+          color: lightblue;
+          background-color: #333;
         }
       }
     }
@@ -64,11 +66,11 @@
       margin-top: 20px;
 
       .location {
-        position: absolute; // Ensure relative positioning for child absolute positioning
+        position: absolute;
 
         img {
           max-width: 100%;
-          height: auto; // Ensure the image height adjusts accordingly
+          height: auto;
           border-radius: 8px;
         }
 
@@ -79,11 +81,58 @@
         }
       }
 
-      .events {
-        h2 {
-          color: #333;
+
+
+        .events {
+          display: flex;
+          flex-direction: column;
+          // flex-wrap: wrap;
+
+          .event-container {
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-radius: 3em;
+            text-align: center;
+            position: relative;
+          
+            &::before {
+              content: '';
+              position: absolute;
+              bottom: -20px; /* Change top to bottom */
+              left: 50%;
+              transform: translateX(-50%);
+              border-width: 20px 20px 0 20px; /* Adjust border-width */
+              border-style: solid;
+              border-color: #ccc transparent transparent transparent; /* Adjust border-color */
+              z-index: 1;
+            }
+          
+            h2 {
+              color: #333;
+              margin-bottom: 10px
+            }
+          
+            p {
+              margin: 10px 0;
+            }
+
+  &:last-child {
+    &::before {
+      display: none; /* Hide the pointed shape for the last .event-container */
+    }
+  }
+          }
+          
         }
-      }
+
+
+
+
+
+
     }
   }
 
@@ -93,11 +142,18 @@
     .tabs {
       margin-top: 0;
       width: 60%;
-      flex-wrap: nowrap; // Prevent tabs from wrapping on larger screens
+      flex-wrap: nowrap;
+      .event-container {
+        width: 60%; // Adjust the width as per your design requirements
+        max-width: 500px; // Set a maximum width if needed
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
 
     .carousel-container {
       width: 40%;
     }
   }
+
 }
