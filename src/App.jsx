@@ -9,7 +9,6 @@ import p4 from './p4.jpeg';
 import p5 from './p5.jpeg';
 import p6 from './p6.jpeg';
 import location from './location.png';
-import background from './background.jpg';
 import { LocationCurrent } from '@carbon/icons-react';
 import { Header } from '@carbon/react';
 
@@ -27,7 +26,7 @@ function App() {
     <>
               <header className="App-header">
               <div className="main" style={{
-              backgroundColor: "lightblue",
+              backgroundColor: "#3C4043",
               display: "flex",
               flexDirection: "column", 
               flexWrap: "wrap",
@@ -40,12 +39,12 @@ function App() {
               textAlign: "center"
               // Adjusted padding
             }}>
-            <h1>Welcome to Alok - Shreya Wedding</h1>
-            <p style={{ fontSize: 16 }}>by Bhat's Family</p>
+            <h1 style={{ color: 'white'}}>Welcome to Alok - Shreya Wedding</h1>
+            <p style={{ fontSize: 16, color: 'white' }}>by Bhat's Family</p>
           </div>
 
     </header>
-    <div className="main" style={{ backgroundColor: 'lightgrey'}}>
+    <div className="main">
         <div className="carousel-container">
           <Carousel autoPlay={true} interval={6000} autoFocus infiniteLoop showIndicators stopOnHover>
             {images.map((image, index) => (
@@ -99,11 +98,11 @@ function App() {
                   <h2 style={{ fontSize: '30px', fontWeight: 'bold' }}>Reception</h2>
                   <p>Date: May 03, 2024</p>
                   <p>Time: Evening @5:30 </p>
-                  <p>Venue: Manjushree Badadabailu </p>
+                  <p>Venue: Manjushree, Badadabailu </p>
                   <p>& Cultural Events By Family</p>
                 </div>
 
-                <div className="event-container" style={{ backgroundColor: "green", fontFamily: 'fantasy', fontSize: '22px', fontStyle: 'normal', fontWeight: 'normal' }}>
+                <div className="event-container" style={{ backgroundColor: "greenyellow", fontFamily: 'fantasy', fontSize: '22px', fontStyle: 'normal', fontWeight: 'normal' }}>
                   <h2 style={{ fontSize: '30px', fontWeight: 'bold' }}>Satya Narayana Pooje</h2>
                   <p>Date: March 04, 2024</p>
                   <p>Venue: Manjushree Badadabailu</p>
