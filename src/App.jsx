@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Import the carousel styles
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './App.scss';
 import p1 from './p1.jpeg';
 import p2 from './p2.jpeg';
@@ -10,12 +10,10 @@ import p5 from './p5.jpeg';
 import p6 from './p6.jpeg';
 import location from './location.png';
 import { LocationCurrent } from '@carbon/icons-react';
-import { Header } from '@carbon/react';
 
 function App() {
-  const [activeTab, setActiveTab] = useState(0); // To track the active tab
-
-  const images = [ p2, p3, p4, p5, p6];
+  const [activeTab, setActiveTab] = useState(0);
+  const images = [p2, p3, p4, p5, p6];
   const locationLink = 'https://goo.gl/maps/LiisgKv448xUEViu6';
 
   const handleTabChange = (tabIndex) => {
@@ -24,27 +22,26 @@ function App() {
 
   return (
     <>
-              <header className="App-header">
-              <div className="main" style={{
-              backgroundColor: "#3C4043",
-              display: "flex",
-              flexDirection: "column", 
-              flexWrap: "wrap",
-              alignItems: "center",
-              justifyContent: "center",
-              fontFamily: "cursive",
-              fontSize: 20,
-              fontWeight: "bold",
-              paddingBottom: 0,
-              textAlign: "center"
-              // Adjusted padding
-            }}>
-            <h1 style={{ color: 'white'}}>Welcome to Alok - Shreya Wedding</h1>
-            <p style={{ fontSize: 16, color: 'white' }}>by Bhat's Family</p>
-          </div>
+      <header className="App-header">
+        <div className="main" style={{
+          backgroundColor: "#3C4043",
+          display: "flex",
+          flexDirection: "column",
+          flexWrap: "wrap",
+          alignItems: "center",
+          justifyContent: "center",
+          fontStyle: "italic",
+          fontSize: 20,
+          fontWeight: "bold",
+          paddingBottom: 0,
+          textAlign: "center"
+        }}>
+          <h1 style={{ color: 'white'}}>Welcome to Alok - Shreya Wedding</h1>
+          <p style={{ fontSize: 16, color: 'white' }}>by Bhat's Family</p>
+        </div>
+      </header>
 
-    </header>
-    <div className="main">
+      <div className="main">
         <div className="carousel-container">
           <Carousel autoPlay={true} interval={6000} autoFocus infiniteLoop showIndicators stopOnHover>
             {images.map((image, index) => (
@@ -76,47 +73,31 @@ function App() {
             )}
 
             {activeTab === 1 && (
-    
               <div className="events">
-              
-              <p style={{ textAlign: 'center', fontFamily: 'fantasy', fontWeight: "bold", fontSize: 25, paddingBottom: 16}}>Kindly participate & Bless US</p>
-                <div className="event-container" style={{ backgroundColor: "violet", fontFamily: 'fantasy', fontSize: '22px', fontStyle: 'italic', fontWeight: 'bold' }}>
-                  <h2 style={{ fontSize: '30px', fontWeight: 'bold' }}>Naandi</h2>
-                  <p>Date: May 02, 2024</p>
-                  <p> Venue: Manjushree Badadabailu </p>
-                </div>
-
-                <div className="event-container" style={{ backgroundColor: "orange", fontFamily: 'fantasy', fontSize: '22px', fontStyle: 'normal', fontWeight: 'normal' }}>
-                  <h2 style={{ fontSize: '30px', fontWeight: 'bold' }}>Wedding Ceremony</h2>
-                  <p>Date: May 03, 2024</p>
-                  <p>Time: Morning @8:30 </p>
-                  <p>Venue: Manjushree Badadabailu</p>
-                  <p>& Vadhu Prahvesha @11:30</p>
-                </div>
-
-                <div className="event-container" style={{ backgroundColor: "yellow", fontFamily: 'fantasy', fontSize: '22px', fontStyle: 'normal', fontWeight: 'normal' }}>
-                  <h2 style={{ fontSize: '30px', fontWeight: 'bold' }}>Reception</h2>
-                  <p>Date: May 03, 2024</p>
-                  <p>Time: Evening @5:30 </p>
-                  <p>Venue: Manjushree, Badadabailu </p>
-                  <p>& Cultural Events By Family</p>
-                </div>
-
-                <div className="event-container" style={{ backgroundColor: "greenyellow", fontFamily: 'fantasy', fontSize: '22px', fontStyle: 'normal', fontWeight: 'normal' }}>
-                  <h2 style={{ fontSize: '30px', fontWeight: 'bold' }}>Satya Narayana Pooje</h2>
-                  <p>Date: March 04, 2024</p>
-                  <p>Venue: Manjushree Badadabailu</p>
-                </div>
-
+                <p style={{ textAlign: 'center', fontWeight: "bold", fontSize: 25, paddingBottom: 16, color: 'white' }}>Kindly participate & Bless US</p>
+                {events.map((event, index) => (
+                  <div key={index} className="event-container" style={{ backgroundColor: event.color }}>
+                    <h2 style={{ fontSize: '30px', fontWeight: 'bold' }}>{event.title}</h2>
+                    <p>Date: {event.date}</p>
+                    {event.time && <p>Time: {event.time}</p>}
+                    <p>Venue: {event.venue}</p>
+                    {event.additional && <p>{event.additional}</p>}
+                  </div>
+                ))}
               </div>
             )}
-
-
-
           </div>
         </div>
-      </div></>
+      </div>
+    </>
   );
 }
+
+const events = [
+  { title: 'Naandi', date: 'May 02, 2024', venue: 'Manjushree Badadabailu', color: 'violet' },
+  { title: 'Wedding Ceremony', date: 'May 03, 2024', time: 'Morning @8:30 & Vadhu Prahvesha @11:30', venue: 'Manjushree Badadabailu', color: 'orange' },
+  { title: 'Reception', date: 'May 03, 2024', time: 'Evening @5:30', venue: 'Manjushree, Badadabailu', additional: '& Cultural Events By Family', color: 'yellow' },
+  { title: 'Satya Narayana Pooje', date: 'March 04, 2024', venue: 'Manjushree Badadabailu', color: 'greenyellow' }
+];
 
 export default App;
